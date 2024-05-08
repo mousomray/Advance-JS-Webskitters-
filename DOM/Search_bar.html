@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Search Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #search-bar {
+            padding: 10px;
+        }
+        ul{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Search Bar Project</h1>
+    <input type="text" id="search-bar" placeholder="Search..." oninput="
+        const query = this.value.toLowerCase();
+        const resultsList = document.getElementById('results-list');
+        resultsList.innerHTML = '';
+
+        if (query) {
+            const data = ['Apple', 'Banana', 'Cherry', 'Date', 'Grape', 'Lemon', 'Mango', 'Orange', 'Pineapple', 'Strawberry','Dog','Cat','Java','Mousom','Etc'];
+            const results = data.filter(item => item.toLowerCase().includes(query));
+            
+            if (results.length > 0) {
+                results.forEach(result => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = result;
+                    resultsList.appendChild(listItem);
+                });
+            } else {
+                const noResultsItem = document.createElement('li');
+                noResultsItem.textContent = 'No results found.';
+                resultsList.appendChild(noResultsItem);
+            }
+        }
+    ">
+    <div id="search-results">
+        <h2>Search Results:</h2>
+        <ul id="results-list"></ul>
+    </div>
+</body>
+</html>

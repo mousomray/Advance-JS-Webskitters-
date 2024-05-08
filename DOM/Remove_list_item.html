@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="addButton">Add list element</button>
+    <button id="removeButton">Remove list element</button>
+    <ul id="myList"></ul>
+    <script>
+      document.addEventListener("DOMContentLoaded", function (){
+        let addButton = document.getElementById("addButton");
+        let removeButton = document.getElementById("removeButton");
+        let myList = document.getElementById("myList");
+
+        addButton.addEventListener("click", function(){
+            let litems = ["Mobile", "Laptop", "Monitor", "Radio"];
+
+            litems.forEach(function(itemText){
+                var li = document.createElement("li");
+                li.textContent = itemText;
+                myList.appendChild(li);
+            });
+        });
+
+        removeButton.addEventListener("click", function(){
+            let listItems = myList.getElementsByTagName("li");
+            if (listItems.length > 0) {
+                myList.removeChild(listItems[listItems.length - 1]);
+            }
+        });
+      });
+    </script>
+</body>
+</html>

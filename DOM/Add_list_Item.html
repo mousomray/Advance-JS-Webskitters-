@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dynamic List</title>
+</head>
+
+<body>
+    <h1>Dynamic List Example</h1>
+    <button id="addItemButton">Add List Items</button>
+    <ul id="myList"></ul>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get references to the button and the ul element
+            var addItemButton = document.getElementById("addItemButton");
+            var myList = document.getElementById("myList");
+
+            // Add a click event listener to the button
+            addItemButton.addEventListener("click", function () {
+                // Create an array of items to add
+                var itemsToAdd = ["Item 1", "Item 2", "Item 3"];
+
+                // Loop through the items and add them to the ul as list items
+                itemsToAdd.forEach(function (itemText) {
+                    var li = document.createElement("li"); // Create a new list item element
+                    li.textContent = itemText; // Set the text content of the list item
+                    myList.appendChild(li); // Append the list item to the ul
+                });
+            });
+        });
+
+    </script>
+</body>
+
+</html>

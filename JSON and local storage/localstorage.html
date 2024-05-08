@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="demo">Local storage</h1>
+
+</body>
+<script>
+    // Create a object
+    const obj = {name:"John", age:30, city:"New York"};
+    
+    // Object convert to JSON string
+    const myJSON = JSON.stringify(obj);
+
+    // JSON file store in local storage
+    localStorage.setItem("auth",myJSON);
+    
+    // JSON file get from local storage
+    const ddd =JSON.parse(localStorage.getItem("auth"))
+
+    // JSON file element add in html
+    document.getElementById("demo").innerHTML = ddd.name;
+
+    // Remove JSON file from local storage
+    localStorage.removeItem("auth");
+
+    // Clear All JSON file from local storage
+    localStorage.clear();
+    
+</script>
+</html>

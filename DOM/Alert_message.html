@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form</title>
+</head>
+<body>
+    <form id="myForm">
+        <label for="inputField">Enter a value:</label>
+        <input type="text" id="inputField" name="inputField">
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("myForm");
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault(); // Prevent the default form submission behavior
+                const inputField = document.getElementById("inputField");
+                const inputValue = inputField.value;
+
+                alert("You entered: " + inputValue);
+            });
+        });
+    </script>
+</body>
+</html>

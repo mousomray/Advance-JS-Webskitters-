@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dropdown Menu</title>
+  <style>
+    #dropdown {
+      display: none;
+    }
+
+    button {
+      padding: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Dropdown Menu</h1>
+
+  <button id="toggleButton" onclick="
+    const dropdown = document.getElementById('dropdown');
+
+    if (dropdown.style.display === 'none' || dropdown.style.display === '') {
+      dropdown.style.display = 'block';
+    } else {
+      dropdown.style.display = 'none';
+    }
+  ">Toggle Dropdown</button>
+
+  <div id="dropdown">
+    <a href="#">Option 1</a>
+    <a href="#">Option 2</a>
+    <a href="#">Option 3</a>
+  </div>
+</body>
+</html>

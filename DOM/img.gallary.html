@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Image Gallery</title>
+  <style>
+    #imageGallery {
+      text-align: center;
+    }
+
+    #imageGallery img {
+      max-width: 100%;
+      max-height: 80vh;
+    }
+
+    #navButtons {
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Image Gallery</h1>
+
+  <div id="imageGallery">
+    <img src="image1.jpg" id="galleryImage">
+  </div>
+
+  <div id="navButtons">
+    <button onclick="changeImage('prev')">Previous</button>
+    <button onclick="changeImage('next')">Next</button>
+  </div>
+</body>
+<script>
+  function changeImage(direction) {
+    let images = ['image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg'];
+    let currentImage = document.getElementById('galleryImage').src;
+    let currentIndex = images.indexOf(currentImage.substring(currentImage.lastIndexOf('/') + 1));
+
+    if (direction === 'next') {
+      currentIndex = (currentIndex + 1) % images.length;
+    } else if (direction === 'prev') {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+    }
+
+    document.getElementById('galleryImage').src = images[currentIndex];
+  }
+</script>
+
+</html>

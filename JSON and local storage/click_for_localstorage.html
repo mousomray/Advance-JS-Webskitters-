@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="add" onclick="add()">Click for add</button>
+    <button id="remove" onclick="remove()">Click for remove </button>
+</body>
+<script>
+   let myobject = {name:'Mousom',age:23,city:'Uttarpara',hobbies:'Coading'};
+   function add(){
+        let myjson = JSON.stringify(myobject);
+        localStorage.setItem('mousom',myjson);
+    }
+    function remove(){
+        localStorage.removeItem('mousom')
+    }
+    
+</script>
+</html>
